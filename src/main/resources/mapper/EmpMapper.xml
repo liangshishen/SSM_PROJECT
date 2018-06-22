@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.EmpMapper">
+
+	<!-- List<Emp> selectAll(); -->
+	<select id="selectAll" resultType="org.example.bean.Emp">
+		SELECT
+			empno, ename, job, mgr, hiredate, sal, comm, deptno
+		FROM
+			emp
+	</select>
+
+	<!-- Emp selectByEmpno(Integer empno); -->
+	<select id="selectByEmpno" resultType="org.example.bean.Emp">
+		SELECT
+			empno, ename, job, mgr, hiredate, sal, comm, deptno
+		FROM
+			emp
+		WHERE
+			empno = #{empno}
+	</select>
+
+	<!-- Integer insert(Emp emp); -->
+	<insert id="insert" parameterType="org.example.bean.Emp">
+		insert into emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)
+		values (#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
+	</insert>
+
+	<!-- Integer update(Emp emp); -->
+	<update id="update" parameterType="org.example.bean.Emp">
+		update emp set
+			ename = #{ename},
+			job = #{job},
+			mgr = #{mgr},
+			hiredate = #{hiredate},
+			sal = #{sal},
+			comm = #{comm},
+			deptno = #{deptno}
+		where
+			empno = #{empno}
+	</update>
+
+	<!-- Integer delete(Integer empno); -->
+	<delete id="delete">
+		DELETE FROM emp WHERE empno = #{empno}
+	</delete>
+
+</mapper>
