@@ -7,6 +7,7 @@
 		.name:hover {
 			color: #f66;
 		}
+
 		.tips {
 			display: none;
 			position: absolute;
@@ -14,6 +15,7 @@
 			background-color: #fbf0db;
 			border: 1px solid #ff9000;
 		}
+
 		.name:hover + .tips {
 			display: block;
 		}

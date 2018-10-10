@@ -23,13 +23,13 @@
 
 	<!-- Integer insert(Emp emp); -->
 	<insert id="insert" parameterType="org.example.bean.Emp">
-		insert into emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)
-		values (#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
+		INSERT INTO emp (empno, ename, job, mgr, hiredate, sal, comm, deptno)
+		VALUES (#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
 	</insert>
 
 	<!-- Integer update(Emp emp); -->
 	<update id="update" parameterType="org.example.bean.Emp">
-		update emp set
+		UPDATE emp SET
 			ename = #{ename},
 			job = #{job},
 			mgr = #{mgr},
@@ -37,7 +37,7 @@
 			sal = #{sal},
 			comm = #{comm},
 			deptno = #{deptno}
-		where
+		WHERE
 			empno = #{empno}
 	</update>
 

@@ -16,11 +16,12 @@ public class EmpController {
 	@Resource
 	private EmpService empService;
 
-	@RequestMapping("/showEmpList.do")
+	// 转发到员工列表页面
+	@RequestMapping("/emp_list.do")
 	public String showEmpList(Model model) {
 		List<Emp> emps = empService.getAllEmp();
 		model.addAttribute("emps", emps);
-		return "empList";
+		return "emp_list";
 	}
 
 }
